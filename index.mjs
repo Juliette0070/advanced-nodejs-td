@@ -1,0 +1,23 @@
+import express, { json } from 'express';
+import { PORT } from './constants.mjs';
+import serveUpload from './functions/serve-upload';
+import serveDownload from './functions/serve-download';
+import serveDownloadRemoteFile from './functions/serve-download-remote-file';
+
+const app = express();
+
+app.use(json());
+
+app.get('/', (_req, res) => {
+  res.send('Bienvenue sur le serveur de fichiers');
+});
+
+app.post('/upload/:path', serveUpload);
+
+app.get('/download/:filename', serveDownload);
+
+app.post('/downloadRemoteFile', serveDownloadRemoteFile);
+
+app.listen(PORT, () => {
+  console.log('Server is running on http://localhost:3000');
+});

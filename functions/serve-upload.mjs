@@ -1,6 +1,6 @@
 import { join } from 'path';
 import { STORAGE_PATH } from '../constants.mjs';
-import saveFileStream from './save-file-stream';
+import saveFileStream from './save-file-stream.mjs';
 
 /**
  * Sert à téléverser un fichier sur le serveur

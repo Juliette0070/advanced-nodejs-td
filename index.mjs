@@ -1,8 +1,8 @@
 import express, { json } from 'express';
 import { PORT } from './constants.mjs';
-import serveUpload from './functions/serve-upload';
-import serveDownload from './functions/serve-download';
-import serveDownloadRemoteFile from './functions/serve-download-remote-file';
+import serveUpload from './functions/serve-upload.mjs';
+import serveDownload from './functions/serve-download.mjs';
+import serveDownloadRemoteFile from './functions/serve-download-remote-file.mjs';
 
 const app = express();
 

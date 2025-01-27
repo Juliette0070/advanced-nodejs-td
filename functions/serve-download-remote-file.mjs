@@ -1,7 +1,7 @@
 import { join } from 'path';
 import { STORAGE_PATH } from "../constants.mjs";
-import downloadFile from "./download-file";
-import saveFileStream from "./save-file-stream";
+import downloadFile from "./download-file.mjs";
+import saveFileStream from "./save-file-stream.mjs";
 
 const DOWNLOADS_PATH = 'downloads';
 

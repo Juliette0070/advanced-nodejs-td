@@ -17,7 +17,7 @@ describe("saveFileStream", () => {
       callback();
     });
     const spiedCreateWriteStream = jest.spyOn(fs, "createWriteStream").mockReturnValue(new stream.PassThrough());
-    saveFileStream(inputStream, path, filename);
+    await saveFileStream(inputStream, path, filename);
 
     // then
     expect(spiedMkdir).toHaveBeenCalledTimes(1);

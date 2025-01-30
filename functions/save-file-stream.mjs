@@ -1,5 +1,5 @@
-import { mkdir, createWriteStream } from 'fs';
-import { join } from 'path';
+import fs from 'fs';
+import path from 'path';
 
 /**
  * Sauvegarde un fichier dans le système de fichiers
@@ -11,11 +11,11 @@ import { join } from 'path';
  */
 async function saveFileStream(readStream, filepath, filename) {
   return new Promise((resolve, reject) => {
-    mkdir(filepath, { recursive: true }, (err) => {
+    fs.mkdir(filepath, { recursive: true }, (err) => {
       if (err) {
         reject('Erreur lors de la création du répertoire');
       }
-      const fsFileStream = createWriteStream(join(filepath, filename));
+      const fsFileStream = fs.createWriteStream(path.join(filepath, filename));
       readStream
         .pipe(fsFileStream)
         .on('finish', () => {
